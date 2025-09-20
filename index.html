@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Random Grouping site.... I think</title>
+    </head>
+    <body></body>
+    <script>
+        let arr = [
+            {name: "DERA", gender: "male"},
+            {name: "Tariqat", gender: "female"},
+            {name: "Inioluwa", gender: "male"},
+            {name: "blackie-chan", gender: "male"},
+            {name: "Edugwu", gender: "female"},
+            {name: "Ayinde", gender: "male"},
+            {name: "Babatunde", gender: "male"},
+            {name: "Al-ameen", gender: "male"},
+            {name: "Taiwo", gender: "male"},
+            {name: "Abdulrahman", gender: "male"},
+            {name: "Quadri", gender: "male"},
+            {name: "Isreal", gender: "male"},
+            {name: "Victory", gender: "female"},
+            {name: "Abdussalam", gender: "male"},
+            {name: "Ali", gender: "male"},
+            {name: "Muaa'dh", gender: "male"},
+            {name: "Ally-baba", gender: "male"},
+        ];
+
+         function randoms (arrs){
+            let space = [];
+            let empty = [];
+            
+            do{
+                let randomIndex = Math.floor(arrs.length * Math.random());
+                let random = arrs[randomIndex];
+                arrs.splice(randomIndex, 1);
+                empty.push(random["name"]);
+                if (empty.length === 3){
+                    space.push(empty);
+                    empty = [];
+                }
+        }while(arrs.length > 0);
+        if(empty.length !== 0){
+            space.push(empty);
+        }
+        console.log("finally done");
+        return space;
+        
+        }
+
+        console.log(randoms(arr));   
+    </script>
+</html>
